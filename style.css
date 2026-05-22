@@ -1,0 +1,318 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body{
+  background: #070112;
+  color: white;
+  overflow-x: hidden;
+}
+
+
+.stars{
+  position: fixed;
+  inset: 0;
+  background-image: url("https://i1-c.pinimg.com/1200x/8f/72/8b/8f728b99cf7fbb2c7354ef74c03b7635.jpg");
+  background-size: cover;
+  opacity: 0.25;
+  z-index: -1;
+
+  animation: starsMove 80s linear infinite;
+}
+
+@keyframes starsMove{
+  from{
+    transform: translateY(0);
+  }
+
+  to{
+    transform: translateY(-600px);
+  }
+}
+
+
+header{
+  width: 100%;
+  padding: 25px 7%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo{
+  font-size: 2rem;
+  font-weight: 600;
+
+  color: #ff63f8;
+
+  text-shadow:
+  0 0 8px rgba(255, 99, 248, 0.7);
+}
+
+nav {
+  display: flex;
+  justify-content: center; 
+  gap: 30px;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%; 
+  padding: 20px 0; 
+  z-index: 1000; 
+}
+
+nav a {
+  text-decoration: none;
+  color: #f3f3f3;
+  font-size: 0.95rem;
+  transition: 0.25s ease;
+  position: relative; 
+}
+
+nav a:hover,
+.active {
+  color: #ff77f9;
+}
+
+.login{
+  padding: 12px 24px;
+
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 40px;
+
+  background: rgba(255,255,255,0.05);
+
+  color: white;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.login:hover{
+  background: #ff63f8;
+  border-color: #ff63f8;
+
+  box-shadow:
+  0 0 20px rgba(255,99,248,0.4);
+}
+
+
+.hero{
+  min-height: 90vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 50px;
+
+  padding: 0 7%;
+}
+
+.text{
+  max-width: 600px;
+}
+
+.text h2{
+  font-size: 4.8rem;
+  line-height: 1.1;
+
+  color: #7cf7ff;
+
+  text-shadow:
+  0 0 10px rgba(124,247,255,0.7),
+  0 0 30px rgba(124,247,255,0.3);
+}
+
+.text p{
+  margin: 25px 0 35px;
+
+  font-size: 1.1rem;
+  line-height: 1.8;
+
+  color: #cfcfcf;
+}
+
+
+.explore{
+  padding: 16px 38px;
+
+  border: none;
+  border-radius: 50px;
+
+  background: #ffffff27;
+
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+
+  animation: pulse 2.5s infinite;
+}
+
+.explore:hover{
+  transform: translateY(-3px);
+
+  box-shadow:
+  0 0 25px #7cf7ff;
+}
+
+@keyframes pulse{
+
+  0%{
+    transform: scale(1);
+  }
+
+  50%{
+    transform: scale(1.04);
+  }
+
+  100%{
+    transform: scale(1);
+  }
+
+}
+
+
+
+.floating-image img{
+  width: 480px;
+
+  filter: drop-shadow(0 0 25px rgba(255,255,255,0.1));
+
+  animation: floating 5s ease-in-out infinite;
+}
+
+@keyframes floating{
+
+  0%{
+    transform: translateY(0);
+  }
+
+  50%{
+    transform: translateY(-18px);
+  }
+
+  100%{
+    transform: translateY(0);
+  }
+
+}
+
+
+
+.cards{
+  display: flex;
+  gap: 25px;
+
+  width: max-content;
+
+  animation: carousel 22s linear infinite;
+}
+
+.card{
+  width: 280px;
+
+  background: rgba(255,255,255,0.06);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  border-radius: 24px;
+
+  overflow: hidden;
+
+  transition: 0.4s ease;
+
+  backdrop-filter: blur(8px);
+}
+
+.card:hover{
+  transform: translateY(-8px);
+
+  box-shadow:
+  0 0 25px rgba(255,77,248,0.25);
+}
+
+.card img{
+  width: 100%;
+  height: 350px;
+
+  object-fit: cover;
+}
+
+.card h3{
+  padding: 18px;
+
+  font-size: 1rem;
+  font-weight: 500;
+
+  text-align: center;
+}
+
+@keyframes carousel{
+
+  from{
+    transform: translateX(0);
+  }
+
+  to{
+    transform: translateX(-50%);
+  }
+
+}
+
+
+@media(max-width: 950px){
+
+  .hero{
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    padding-top: 60px;
+  }
+
+  .text h2 {
+    font-size: 3.2rem;
+  }
+
+  .floating-image img {
+    width: 350px;
+  }
+
+}
+
+@media(max-width: 700px) {
+
+  header{
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  nav{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .text h2{
+    font-size: 2.5rem;
+  }
+
+  .text p{
+    font-size: 1rem;
+  }
+
+  .floating-image img{
+    width: 280px;
+  }
+
+}
