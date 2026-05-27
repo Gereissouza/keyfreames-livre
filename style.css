@@ -20,8 +20,6 @@ body{
   background-size: cover;
   opacity: 0.25;
   z-index: -1;
-
-  animation: starsMove 80s linear infinite;
 }
 
 @keyframes starsMove{
@@ -316,3 +314,53 @@ nav a:hover,
   }
 
 }
+
+
+.loader{
+  position: fixed;
+  inset: 0;
+  background: #070112;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  animation: fadeOut 2s forwards;
+  animation-delay: 2s;
+}
+
+.book{
+  width: 80px;
+  height: 80px;
+  border: 5px solid #ff4df8;
+  border-radius: 10px;
+
+  animation: rotate 1.5s infinite;
+}
+
+.loader p{
+  margin-top: 20px;
+  color: #ff4df8;
+  letter-spacing: 2px;
+}
+
+@keyframes rotate{
+
+  0%{
+   transform: rotate(0deg);
+  }
+
+  100%{
+   transform: rotate(360deg);
+  }
+
+} 
+
+@keyframes fadeOut{
+
+  to{
+    opacity: 0;
+   visibility: hidden;
+  }
+
+} 
